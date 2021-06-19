@@ -6,7 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="./style.css" media="screen" />
-  <script src="./script.js"></script>
   <title>Document</title>
 </head>
 
@@ -16,17 +15,25 @@
   </header>
   <main>
     <form>
-      <label for="initial-currency">Converter de
-        <select id="initial-currency">
+      <label for="initial-input">Converter
+        <input type="text" id="initial-input">
       </label>
-      </select>
-      <label for="currency-to-convert">para
-        <select id="currency-to-convert">
+      <label for="initial-currency">
+        <select id="initial-currency">
         </select>
       </label>
+
+      <label for="currency-to-convert">para
+        <select id="currency-to-convert">
+          <option>BRL</option>
+        </select>
+      </label>
+      <p id="total">R$ </p>
     </form>
   </main>
 
 </body>
+
+<script src="./script.js"></script>
 
 </html>
