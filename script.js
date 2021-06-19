@@ -9,6 +9,7 @@ const totalValue = document.querySelector('#total')
 async function getApiContent() {
   const result = await fetch(API_URL);
   const resp = await result.json();
+  delete resp.USDT;
   setOptionsCurrencies(resp);
 }
 getApiContent();
@@ -20,6 +21,7 @@ function setOptionsCurrencies(apiResponse) {
     const newOptionInitial = document.createElement('option');
     newOptionInitial.innerText = currency;
     initialSelect.appendChild(newOptionInitial);
+
   })
 
 }
@@ -27,16 +29,19 @@ function setOptionsCurrencies(apiResponse) {
 async function updateApi() {
   const result = await fetch(API_URL);
   const resp = await result.json();
-  teste(Object.values(resp))
+  delete resp.USDT;
+  calculateConvert(Object.values(resp))
 }
 
-function teste(respApi) {
-  console.log(respApi);
+function calculateConvert(currencies) {
   const valueInput = initialInput.value
   const valueSelected = initialSelect.value
-
-
-};
+  const currencyApiSelected = currencies.find((currency) => currency.code === valueSelected);
+  const totalResult = (Number(currencyApiSelected.ask) * Number(valueInput)).toFixed(2);
+  console.log(totalResult);
+  totalValue.innerHTML = `R$ ${totalResult}`
+}
 
 initialInput.addEventListener("keydown", updateApi);
+initialInput.addEventListener("click", updateApi);
 initialSelect.addEventListener("change", updateApi);
