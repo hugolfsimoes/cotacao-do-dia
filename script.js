@@ -39,7 +39,7 @@ function calculateConvert(currencies) {
   const currencyApiSelected = currencies.find((currency) => currency.code === valueSelected);
   currencyName.innerHTML = `(${currencyApiSelected.name.split('/')[0]})`
   const totalResult = (Number(currencyApiSelected.ask) * Number(valueInput)).toFixed(2);
-  totalValue.innerHTML = `vale R$ ${totalResult} reais`
+  totalValue.innerHTML = `R$ ${totalResult} reais`
 }
 
 initialInput.addEventListener("keydown", updateApi);
