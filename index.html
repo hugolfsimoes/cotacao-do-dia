@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="./node_modules/bulma/css/bulma-rtl.min.css" media="screen" />
   <link rel="stylesheet" type="text/css" href="./style.css" media="screen" />
   <title>Cotação do Real</title>
 </head>
@@ -13,25 +14,30 @@
   <header>
     <h1>Cotação do Real</h1>
   </header>
+
   <main>
-    <form>
-      <label for="initial-input">Converter
-        <input type="number" id="initial-input" value="0.00">
-      </label>
-      <label for="initial-currency">
-        <select id="initial-currency">
-        </select>
-      </label>
+    <div class="container is-fluid">
+      <div class="notification is-primary">
+        <form>
+          <label for="initial-input">
+            <input id="initial-input" class="input is-large" type="number" placeholder="0.00" min="0">
+          </label>
+            <label for="initial-currency">
+              <select id="initial-currency"></select>
+              
+            </label>
 
-      <p id="currency-to-convert">para Real
-      </p>
+            <p id="currency-name">(Dólar Americano)</p>
 
-      <p id="total">Total: R$ </p>
-    </form>
+          <p id="total">vale R$ 0,00 reais</p>
+        </form>
+      </div>
+    </div>
+
   </main>
-  
   <footer>
-    <p>Página criada por Hugo Simões</p>
+        <p id="creator-name">Página criada por Hugo Simões</p>
+      </p>
   </footer>
 
 </body>
