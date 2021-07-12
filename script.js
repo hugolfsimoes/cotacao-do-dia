@@ -1,9 +1,9 @@
 const API_URL = 'https://economia.awesomeapi.com.br/json/all';
 
 const initialSelect = document.querySelector('#initial-currency');
-const selectToConvert = document.querySelector('#currency-to-convert');
 const initialInput = document.querySelector('#initial-input');
-const totalValue = document.querySelector('#total')
+const totalValue = document.querySelector('#total');
+const currencyName = document.querySelector('#currency-name');
 
 
 async function getApiContent() {
@@ -37,9 +37,9 @@ function calculateConvert(currencies) {
   const valueInput = initialInput.value
   const valueSelected = initialSelect.value
   const currencyApiSelected = currencies.find((currency) => currency.code === valueSelected);
+  currencyName.innerHTML = `(${currencyApiSelected.name.split('/')[0]})`
   const totalResult = (Number(currencyApiSelected.ask) * Number(valueInput)).toFixed(2);
-  console.log(totalResult);
-  totalValue.innerHTML = `Total: R$ ${totalResult}`
+  totalValue.innerHTML = `R$ ${totalResult} reais`
 }
 
 initialInput.addEventListener("keydown", updateApi);

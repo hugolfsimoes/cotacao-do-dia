@@ -5,33 +5,41 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="./node_modules/bulma/css/bulma-rtl.min.css" media="screen" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" type="text/css" href="./style.css" media="screen" />
   <title>Cotação do Real</title>
 </head>
 
 <body>
   <header>
-    <h1>Cotação do Real</h1>
+    <h1>Conversor Real</h1>
+    <img src="images/dinheiro.png" id="money">
   </header>
+
   <main>
     <form>
-      <label for="initial-input">Converter
-        <input type="number" id="initial-input" value="0.00">
+      <label for="initial-input">
+        <input id="initial-input" class="input is-large" type="number" placeholder="0.00" min="0" autocomplete="off">
       </label>
       <label for="initial-currency">
-        <select id="initial-currency">
-        </select>
+        <select id="initial-currency"></select>
       </label>
 
-      <p id="currency-to-convert">para Real
-      </p>
+      <p id="currency-name">(Dólar Americano)</p>
 
-      <p id="total">Total: R$ </p>
+      <p>vale</p>
+      <p id="total">R$ 0,00 reais</p>
     </form>
+
   </main>
-  
   <footer>
-    <p>Página criada por Hugo Simões</p>
+    <p id="creator-name">Página criada por Hugo Simões</p>
+    <a href="https://github.com/hugolfsimoes" target="_blank"><img src="images/github.png" id="github"></a>
+    <a href="https://www.linkedin.com/in/hugo-simoes-ti/" target="_blank"><img src="images/linkedin.png"
+        id="linkedin"></a>
   </footer>
 
 </body>
